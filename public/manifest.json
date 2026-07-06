@@ -4,8 +4,8 @@
   "description": "Koleksi Khutbah Jum'at lengkap selama setahun (12 bulan Hijriyah dan materi tematik aktual) dengan penjaminan keabsahan rukun khutbah, didukung mode teleprompter mimbar, catatan otomatis, and ekspor cetak Word/PDF.",
   "icons": [
     {
-      "src": "/logo.jpg",
-      "type": "image/jpeg",
+      "src": "/logo.png",
+      "type": "image/png",
       "sizes": "512x512",
       "purpose": "any maskable"
     }

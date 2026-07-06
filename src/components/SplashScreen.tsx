@@ -47,7 +47,7 @@ export default function SplashScreen({ onStart }: SplashScreenProps) {
           {/* Central Logo Symbol */}
           <div className="absolute inset-4 rounded-xl md:rounded-2xl overflow-hidden border border-amber-400/40">
             <img 
-              src="/logo.jpg" 
+              src="/logo.png" 
               alt="Majmu'atul Khutob App Logo" 
               className="w-full h-full object-cover" 
               referrerPolicy="no-referrer" 

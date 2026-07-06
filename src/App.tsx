@@ -45,7 +45,7 @@ export default function App() {
           <div className="flex items-center gap-3">
             <div className="w-11 h-11 rounded-xl border-2 border-amber-400/50 shadow-md overflow-hidden shrink-0">
               <img 
-                src="/logo.jpg" 
+                src="/logo.png" 
                 alt="Logo Majmu'atul Khutob" 
                 className="w-full h-full object-cover" 
                 referrerPolicy="no-referrer" 
