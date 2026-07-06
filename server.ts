@@ -96,6 +96,9 @@ Sajikan teks Arab di dalam tag html khusus agar mudah dibaca dan didesain secara
 
 // Configure Vite or serve static assets
 async function startServer() {
+  // Serve public folder directly (for logo.jpg, manifest.json, etc.)
+  app.use(express.static("public"));
+
   if (process.env.NODE_ENV !== "production") {
     console.log("Starting server in DEVELOPMENT mode with Vite Middleware...");
     const vite = await createViteServer({
