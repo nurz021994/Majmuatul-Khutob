@@ -1,0 +1,6 @@
+{
+  "name": "MAJMUATUL KHUTOB",
+  "description": "Koleksi Khutbah Jum'at lengkap selama setahun (12 bulan Hijriyah dan materi tematik aktual) dengan penjaminan keabsahan rukun khutbah, didukung mode teleprompter mimbar, catatan otomatis, and ekspor cetak Word/PDF.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
