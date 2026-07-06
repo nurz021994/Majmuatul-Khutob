@@ -4,7 +4,7 @@ import { getSermons, SermonMetadata } from "./data/sermons";
 import SplashScreen from "./components/SplashScreen";
 import Sidebar from "./components/Sidebar";
 import SermonReader from "./components/SermonReader";
-import logoUrl from "./assets/logo.png";
+import AppLogo from "./components/AppLogo";
 
 export default function App() {
   const [showSplash, setShowSplash] = useState<boolean>(true);
@@ -44,13 +44,8 @@ export default function App() {
           
           {/* Logo & Branding Title */}
           <div className="flex items-center gap-3">
-            <div className="w-11 h-11 rounded-xl border-2 border-amber-400/50 shadow-md overflow-hidden shrink-0">
-              <img 
-                src={logoUrl} 
-                alt="Logo Majmu'atul Khutob" 
-                className="w-full h-full object-cover" 
-                referrerPolicy="no-referrer" 
-              />
+            <div className="w-11 h-11 rounded-xl border-2 border-amber-400/40 shadow-md bg-emerald-950/20 flex items-center justify-center shrink-0">
+              <AppLogo className="w-full h-full p-0.5" />
             </div>
             <div>
               <div className="flex items-center gap-2">

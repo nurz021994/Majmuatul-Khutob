@@ -99,6 +99,64 @@ function translatePoint(point: string, lang: string): string {
       .replace(/bertaubat/gi, "repenting")
       .replace(/ke usaha yang barokah/gi, "to blessed endeavors");
   }
+  if (lang === 'ar') {
+    return point
+      .replace(/Awal Tahun Baru Hijriyah/gi, "بداية العام الهجري الجديد")
+      .replace(/Makna hakiki/gi, "المعنى الحقيقي لـ")
+      .replace(/Urgensi/gi, "أهمية")
+      .replace(/Bahaya/gi, "خطورة")
+      .replace(/Pentingnya/gi, "أهمية")
+      .replace(/Kewajiban/gi, "وجوب")
+      .replace(/Kiat/gi, "طرق")
+      .replace(/Meluruskan/gi, "تصحيح")
+      .replace(/Aqidah/gi, "العقيدة")
+      .replace(/Tawakal/gi, "التوكل على الله")
+      .replace(/Ketenangan Jiwa/gi, "طمأنينة النفس")
+      .replace(/Judi Online \(Judol\)/gi, "المقامرة الإلكترونية")
+      .replace(/Judi Online/gi, "المقامرة الإلكترونية")
+      .replace(/Masa Depan Pemuda/gi, "مستقبل الشباب")
+      .replace(/Bulan Shafar/gi, "شهر صفر")
+      .replace(/Sunnah Rasulullah/gi, "سنة رسول الله صلى الله عليه وسلم")
+      .replace(/Kelahiran/gi, "مولد")
+      .replace(/Menepis Keyakinan Sial/gi, "دفع التشاؤم والاعتقادات الباطلة")
+      .replace(/Memurnikan/gi, "تصفية")
+      .replace(/Mengapa/gi, "لماذا")
+      .replace(/sangat adiktif/gi, "يسبب الإدمان الشديد")
+      .replace(/dan merusak/gi, "والدمار")
+      .replace(/Skema penipuan/gi, "مخططات الاحتيال")
+      .replace(/Langkah bertaubat/gi, "خطوات التوبة")
+      .replace(/bertaubat/gi, "التوبة")
+      .replace(/ke usaha yang barokah/gi, "إلى الكسب الطيب المبارك")
+      .replace(/Pilar Pertama/gi, "الركيزة الأولى")
+      .replace(/Pilar Kedua/gi, "الركيزة الثانية")
+      .replace(/Pilar Ketiga/gi, "الركيزة الثالثة")
+      .replace(/Memahami konsep/gi, "فهم مفهوم")
+      .replace(/Mengamalkan nilai/gi, "العمل بقيم")
+      .replace(/Istiqomah dalam/gi, "الاستقامة في")
+      .replace(/Menjaga/gi, "حفظ")
+      .replace(/Mendidik/gi, "تربية")
+      .replace(/Keutamaan/gi, "فضيلة")
+      .replace(/Membangun/gi, "بناء")
+      .replace(/Mencegah/gi, "منع")
+      .replace(/Melestarikan/gi, "إحياء")
+      .replace(/Meneladani/gi, "الاقتداء بـ")
+      .replace(/Kunci/gi, "مفتاح")
+      .replace(/Tantangan/gi, "تحديات")
+      .replace(/Solusi/gi, "الحل")
+      .replace(/Persiapan/gi, "الاستعداد")
+      .replace(/Evaluasi/gi, "المحاسبة")
+      .replace(/Zikir/gi, "الذكر")
+      .replace(/Sabar/gi, "الصبر")
+      .replace(/Syukur/gi, "الشكر")
+      .replace(/Ikhlas/gi, "الإخلاص")
+      .replace(/Taqwa/gi, "التقوى")
+      .replace(/Keluarga/gi, "الأسرة")
+      .replace(/Masyarakat/gi, "المجتمع")
+      .replace(/Umat/gi, "الأمة")
+      .replace(/Akhir Zaman/gi, "آخر الزمان")
+      .replace(/Harta Haram/gi, "المال الحرام")
+      .replace(/Riba/gi, "الربا");
+  }
   return point;
 }
 
@@ -504,6 +562,21 @@ export function generateOfflineSermon(sermon: SermonMetadata, lang: string, vari
     themeTransition = `Respected brothers and sisters, let us open our hearts and focus our minds to reflect deeply on this noble and sacred message:`;
     closingIntro = "Let us utilize the precious moments of this Friday prayer to beg Allah SWT for guidance, strength, and steadfastness in faith. May Allah guide us, our children, our spouses, and our entire family upon the straight path of obedience, and protect us from the trials and tribulations of the end of times.";
   }
+  else if (lang === 'ar') {
+    welcomeText = "مَعَاشِرَ الْمُسْلِمِينَ وَزُمْرَةَ الْمُؤْمِنِينَ رَحِمَكُمُ اللهُ،";
+    firstKhutbahTitle = "الخطبة الأولى";
+    secondKhutbahTitle = "الخطبة الثانية";
+    rukunBadgeText = "أركان الخطبة مستوفاة: ١. الحمد لله | ٢. الصلاة على النبي | ٣. الوصية بالتقوى | ٤. قراءة آية من القرآن الكريم";
+    rukunBadgeTextSecond = "أركان الخطبة مستوفاة: ١. الحمد لله | ٢. الصلاة على النبي | ٣. الوصية بالتقوى";
+    rukunBadgeTextPrayer = "أركان الخطبة مستوفاة: ٥. الدعاء للمؤمنين والمؤمنات";
+    transisiBadgeText = "خاتمة الخطبة الأولى ودعاء الاستغفار بين الخطبتين";
+
+    praiseIntro = "أَمَّا بَعْدُ، فَالْحَمْدُ للهِ الَّذِي جَعَلَ الْجُمُعَةَ عِيدًا لِلْمُسْلِمِينَ، وَأَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللهُ وَحْدَهُ لَا شَرِيكَ لَهُ، وَأَشْهَدُ أَنَّ سَيِّدَنَا مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ سَيِّدُ الْمُرْسَلِينَ.";
+    shalawatIntro = "وَالصَّلَاةُ وَالسَّلَامُ عَلَى رَسُولِ اللهِ سَيِّدِنَا مُحَمَّدٍ، وَعَلَى آلِهِ وَصَحْبِهِ أَجْمَعِينَ.";
+    taqwaIntro = "فَيَا عِبَادَ اللهِ، أُوصِيكُمْ وَنَفْسِي بِتَقْوَى اللهِ الْعَلِيِّ الْعَظِيمِ، فَقَدْ فَازَ الْمُتَّقُونَ.";
+    themeTransition = "مَعَاشِرَ الْمُسْلِمِينَ رَحِمَكُمُ اللهُ، دَعُونَا نَتَفَكَّرُ فِي هَذِهِ النَّصِيحَةِ الْغَالِيَةِ:";
+    closingIntro = "أَعُوذُ بِاللهِ مِنَ الشَّيْطَانِ الرَّجِيمِ، وَأَقِمِ الصَّلَاةَ إِنَّ الصَّلَاةَ تَنْهَى عَنِ الْفَحْشَاءِ وَالْمُنْكَرِ وَلَذِكْرُ اللهِ أَكْبَرُ.";
+  }
 
   let outlinesHTML = "";
 
@@ -532,6 +605,7 @@ export function generateOfflineSermon(sermon: SermonMetadata, lang: string, vari
     }).join("");
   } else {
     outlinesHTML = outlinesList.map((point, index) => {
+      const translatedPoint = translatePoint(point, lang);
       let contentParagraph = "";
 
       const categoryKey = (sermon.category || '').toLowerCase();
@@ -882,377 +956,357 @@ export function generateOfflineSermon(sermon: SermonMetadata, lang: string, vari
               </p>
               <p class="mb-4">
                 Mengenai hal ini, Ibnu Qayyim Al-Jauziyyah rahimahullah menuliskan maqolah yang sangat bernilai:
-                <span class="italic text-slate-600 dark:text-slate-300">"Keistiqomahan adalah kerahmatan yang mengikat keberkahan amal. Betapa banyak manusia memulai kebaikan, namun hanya sedikit yang mampu memelihara nyalanya hingga akhir hayat."</span>
-                Maka jagalah konsistensi dalam mengamalkan <strong>${point}</strong> ini agar kita wafat dalam keadaan husnul khatimah.
+                <span class="italic text-slate-600 dark:text-slate-300">"Keistiqomahan adalah kerahmatan yang mengikat keberkahan amal seorang hamba."</span>
               </p>
+              `;
+              appNyataHTML = `
+                <strong>Aplikasi Nyata & Tantangan Zaman:</strong> Supaya kita senantiasa istiqomah mengamalkan nilai-nilai <strong>${point}</strong>, rajinlah menghadiri majelis taklim dan berkumpul bersama orang-orang shaleh.
               `;
             } else if (closingVariant === 1) {
               closingHTML = `
               <p class="mb-4">
-                Hadirin yang berbahagia, perjalanan spiritual kita tentu tidak berhenti pada pemahaman dan amal sesaat saja. Mahkota tertinggi yang menyempurnakan seluruh ikhtiar ini adalah kesungguhan kita untuk senantiasa merawat serta memperkokoh <strong>${point}</strong> secara istiqomah. Perlu kita sadari bersama bahwa mempertahankan sebuah kebaikan membutuhkan perjuangan ekstra. Keberhasilan kita sangat menuntut adanya sikap keistiqomahan (konsistensi) yang tiada henti di setiap helaan nafas kehidupan kita sehari-hari.
+                Hadirin sekalian, mari kita hiasi seluruh rangkaian amal kita dengan keikhlasan yang tulus. Ikhlas adalah ruh dari setiap ketaatan, di mana hati kita bersih dari keinginan dipuji manusia (riya') atau mengharap balasan duniawi. Tanpa keikhlasan, amalan sebesar apa pun akan sirna bagaikan debu yang tertiup angin topan.
               </p>
               <p class="mb-4 text-emerald-700 dark:text-emerald-400 font-medium italic">
-                Rasulullah SAW menegaskan pentingnya istiqomah dalam hadits riwayat Imam Muslim dari Sufyan bin Abdillah radhiyallahu 'anhu:
+                Ulama sufi terkemuka, Fudhail bin 'Iyadh rahimahullah memberikan wasiat emas:
               </p>
               <div class="my-3 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-xl border-l-4 border-emerald-600 text-center">
-                <p class="arabic-text text-xl mb-2 text-slate-800 dark:text-slate-100" dir="rtl">قُلْ آمَنْتُ بِاللَّهِ فَاسْتَقِمْ</p>
-                <p class="text-xs text-slate-500 dark:text-slate-400 font-sans">"Katakanlah: 'Aku beriman kepada Allah', kemudian beristiqomahlah (teguhlah pada pendirianmu)!"</p>
+                <span class="italic text-slate-600 dark:text-slate-300">"Meninggalkan amalan saleh karena manusia adalah riya', sedangkan beramal saleh karena manusia adalah syirik. Dan ikhlas adalah ketika Allah menyelamatkanmu dari keduanya."</span>
               </div>
               <p class="mb-4">
-                Untuk meraih derajat istiqomah tersebut, kita harus meneladani keteladanan para sahabat nabi yang agung. Mereka senantiasa menjaga keikhlasan batin dan menjauhi keputusasaan di tengah badai fitnah dunia.
+                Semoga Allah melimpahkan keteguhan hati kepada kita untuk senantiasa menjaga keikhlasan dalam mengamalkan pilar <strong>${point}</strong> di mana pun kita berada.
               </p>
-              <p class="mb-4">
-                Mengenai hal ini, Sayyidina Umar bin Khattab radhiyallahu 'anhu pernah memberikan wasiat atau atsar yang sangat masyhur:
-                <span class="italic text-slate-600 dark:text-slate-300">"Istiqomah adalah engkau berdiri tegak di atas perintah dan larangan Allah, dan tidak berputar-putar mencari jalan pintas atau kelonggaran seperti putarnya seekor rubah."</span>
-                Maka jagalah konsistensi dalam mengamalkan <strong>${point}</strong> ini agar kita wafat dalam keadaan husnul khatimah.
-              </p>
+              `;
+              appNyataHTML = `
+                <strong>Aplikasi Nyata & Tantangan Zaman:</strong> Latihlah keikhlasan kita dengan memperbanyak amalan rahasia (sirr) yang tidak diketahui orang lain, seperti sedekah sembunyi-sembunyi atau istighfar di keheningan malam selaras dengan nilai <strong>${point}</strong>.
               `;
             } else if (closingVariant === 2) {
               closingHTML = `
               <p class="mb-4">
-                Hadirin yang berbahagia, perjalanan spiritual kita tentu tidak berhenti pada pemahaman dan amal sesaat saja. Mahkota tertinggi yang menyempurnakan seluruh ikhtiar ini adalah kesungguhan kita untuk senantiasa merawat serta memperkokoh <strong>${point}</strong> secara istiqomah. Perlu kita sadari bersama bahwa mempertahankan sebuah kebaikan sering kali jauh lebih menantang daripada memulainya.
+                Hadirin yang dirahmati Allah, marilah kita senantiasa sadar bahwa sisa umur kita di dunia ini sangatlah terbatas. Setiap detik yang berlalu membawa kita semakin dekat dengan liang lahat dan hari pertanggungjawaban di akhirat kelak. Oleh karena itu, mari kita pergunakan nikmat waktu ini sebaik-baiknya untuk menguatkan ketakwaan kita.
               </p>
               <p class="mb-4 text-emerald-700 dark:text-emerald-400 font-medium italic">
-                Allah SWT berfirman di dalam Al-Qur'an Surah Hud ayat 112 untuk memerintahkan hamba-Nya agar tetap konsisten:
+                Imam Hasan Al-Bashri rahimahullah memberikan untaian nasihat yang sangat mendalam:
               </p>
               <div class="my-3 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-xl border-l-4 border-emerald-600 text-center">
-                <p class="arabic-text text-xl mb-2 text-slate-800 dark:text-slate-100" dir="rtl">فَاسْتَقِمْ كَمَا أُمِرْتَ وَمَنْ تَابَ مَعَكَ وَلَا تَطْغَوْا</p>
-                <p class="text-xs text-slate-500 dark:text-slate-400 font-sans">"Maka tetaplah engkau (di jalan yang benar), sebagaimana diperintahkan kepadamu dan (juga) orang yang telah bertaubat bersamamu dan janganlah kamu melampaui batas."</p>
+                <span class="italic text-slate-600 dark:text-slate-300">"Wahai anak Adam, sesungguhnya engkau hanyalah kumpulan hari-hari. Setiap kali satu hari berlalu dari umurmu, maka telah hilang pula sebagian dari dirimu."</span>
               </div>
               <p class="mb-4">
-                Konsistensi dalam kebaikan adalah tanda kokohnya iman di dalam dada. Kita harus terus berusaha memperbaiki diri, membersihkan jiwa dari kesombongan, riya', dan sifat malas yang sering merongrong semangat ibadah kita.
+                Marilah kita bertekad bulat untuk tidak menunda-nunda amal saleh dan terus meningkatkan pengamalan <strong>${point}</strong> sebelum ajal menjemput kita secara tiba-tiba.
               </p>
-              <p class="mb-4">
-                Mengenai hal ini, Sayyidina Ali bin Abi Thalib karramallahu wajhah pernah meninggalkan sebuah atsar yang sangat berharga:
-                <span class="italic text-slate-600 dark:text-slate-300">"Amal yang sedikit namun konsisten (istiqomah) jauh lebih dicintai dan memberikan harapan daripada amal besar yang menggebu-gebu di awal tetapi mendatangkan kebosanan lalu terputus begitu saja."</span>
-                Maka jagalah konsistensi dalam mengamalkan <strong>${point}</strong> ini agar kita wafat dalam keadaan husnul khatimah.
-              </p>
+              `;
+              appNyataHTML = `
+                <strong>Aplikasi Nyata & Tantangan Zaman:</strong> Buatlah jadwal harian yang seimbang antara ibadah dan urusan duniawi. Kurangi membuang waktu secara sia-sia untuk hal-hal yang tidak bermanfaat, demi mengoptimalkan implementasi <strong>${point}</strong>.
               `;
             } else if (closingVariant === 3) {
               closingHTML = `
               <p class="mb-4">
-                Hadirin yang berbahagia, perjalanan spiritual kita tentu tidak berhenti pada pemahaman dan amal sesaat saja. Mahkota tertinggi yang menyempurnakan seluruh ikhtiar ini adalah kesungguhan kita untuk senantiasa merawat serta memperkokoh <strong>${point}</strong> secara istiqomah. Di tengah hantaman godaan zaman, istiqomah adalah tameng pelindung iman yang paling kokoh.
+                Hadirin sekalian, sebagai penutup khutbah, mari kita sadari bahwa kesalehan spiritual haruslah berbanding lurus dengan kesalehan sosial. Hubungan yang harmonis dengan Allah (habluminallah) harus dibuktikan dengan hubungan yang baik dengan sesama manusia (habluminannas). Hindarilah permusuhan, saling mendengki, dan memutuskan tali silaturahim.
               </p>
               <p class="mb-4 text-emerald-700 dark:text-emerald-400 font-medium italic">
-                Allah SWT menjanjikan keberkahan hidup bagi orang yang teguh pendirian dalam Surah Al-Jin ayat 16:
+                Hujjatul Islam Imam Al-Ghazali rahimahullah mengingatkan kita dalam wasiatnya:
               </p>
               <div class="my-3 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-xl border-l-4 border-emerald-600 text-center">
-                <p class="arabic-text text-xl mb-2 text-slate-800 dark:text-slate-100" dir="rtl">وَأَنْ لَوِ اسْتَقَامُوا عَلَى الطَّرِيقَةِ لَأَسْقَيْنَاهُمْ مَاءً غَدَقًا</p>
-                <p class="text-xs text-slate-500 dark:text-slate-400 font-sans">"Dan sekiranya mereka tetap berjalan lurus (istiqomah) di atas jalan itu (agama Islam), niscaya Kami akan mencurahkan kepada mereka air yang cukup (rezeki yang melimpah)."</p>
+                <span class="italic text-slate-600 dark:text-slate-300">"Barangsiapa memperbaiki hubungannya dengan Allah, niscaya Allah akan memperbaiki hubungannya dengan sesama manusia. Dan barangsiapa memperbaiki urusan akhiratnya, niscaya Allah akan mencukupkan urusan dunianya."</span>
               </div>
               <p class="mb-4">
-                Menjaga keistiqomahan di akhir zaman membutuhkan perjuangan batin yang luar biasa. Kita harus terus memohon petunjuk Allah, berkumpul dengan orang-orang shaleh, and senantiasa berdzikir agar hati kita tidak condong pada kesesatan setelah mendapat petunjuk.
+                Marilah kita rajut tali ukhuwah islamiyah, saling menolong dalam kebaikan, serta mengamalkan pilar kesucian <strong>${point}</strong> demi kedamaian bersama.
               </p>
-              <p class="mb-4">
-                Terkait beratnya menjaga kebaikan ini, salah seorang ulama besar salaf, Imam Sufyan al-Tsauri rahimahullah menuliskan maqolah yang sangat bernilai:
-                <span class="italic text-slate-600 dark:text-slate-300">"Menjaga keistiqomahan di tengah kerusakan zaman laksana seseorang yang menggenggam bara api. Kesulitan dan rasa lelah yang kamu rasakan saat mempertahankan kesucian imanmu adalah bukti kejujuran taubatmu."</span>
-                Maka jagalah konsistensi dalam mengamalkan <strong>${point}</strong> ini agar kita wafat dalam keadaan husnul khatimah.
-              </p>
+              `;
+              appNyataHTML = `
+                <strong>Aplikasi Nyata & Tantangan Zaman:</strong> Jalin kembali silaturahim dengan kerabat atau tetangga yang sempat renggang. Maafkanlah kesalahan orang lain dengan tulus dan hindari perdebatan yang sia-sia selaras dengan pilar <strong>${point}</strong>.
               `;
             } else {
               closingHTML = `
               <p class="mb-4">
-                Hadirin yang berbahagia, perjalanan spiritual kita tentu tidak berhenti pada pemahaman dan amal sesaat saja. Mahkota tertinggi yang menyempurnakan seluruh ikhtiar ini adalah kesungguhan kita untuk senantiasa merawat serta memperkokoh <strong>${point}</strong> secara istiqomah. Perlu kita sadari bersama bahwa kelestarian amal adalah bukti diterimanya ibadah kita di sisi-Nya.
+                Hadirin yang berbahagia, akhirlah seluruh ikhtiar kita dengan senantiasa bersyukur atas limpahan karunia Allah SWT dan qana'ah (merasa cukup) dengan apa yang telah dibagikan untuk kita. Rasa syukur akan melapangkan dada, menjauhkan kita dari keserakahan duniawi, serta mengundang keberkahan hidup yang berlipat ganda.
               </p>
               <p class="mb-4 text-emerald-700 dark:text-emerald-400 font-medium italic">
-                Rasulullah SAW bersabda mengenai amalan yang paling disukai-Nya dalam hadits riwayat Imam Al-Bukhari dan Muslim:
+                Syaikh Ibnu Atha'illah Al-Iskandari rahimahullah dalam kitab <em>Al-Hikam</em> menuliskan wasiat indah:
               </p>
               <div class="my-3 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-xl border-l-4 border-emerald-600 text-center">
-                <p class="arabic-text text-xl mb-2 text-slate-800 dark:text-slate-100" dir="rtl">أَحَبُّ الأَعْمَالِ إِلَى اللَّهِ أَدْوَمُهَا وَإِنْ قَلَّ</p>
-                <p class="text-xs text-slate-500 dark:text-slate-400 font-sans">"Amalan yang paling dicintai oleh Allah adalah amalan yang paling kontinu (istiqomah) meskipun sedikit."</p>
+                <span class="italic text-slate-600 dark:text-slate-300">"Barangsiapa yang tidak mensyukuri nikmat, maka ia telah bersiap-siap untuk kehilangannya. Dan barangsiapa yang mensyukurinya, maka ia telah mengikat nikmat itu dengan ikatan yang kuat."</span>
               </div>
               <p class="mb-4">
-                Seorang mukmin sejati tidak pernah merasa cukup dengan amalannya saat ini. Kita harus proaktif melakukan pembersihan jiwa (tazkiyatun nufus) dari riya', ujub, dan cinta dunia yang dapat melunturkan keistiqomahan kita dalam beramal shalih.
-              </p>
-              <p class="mb-4">
-                Mengenai hal ini, ulama tabi'in terkemuka Al-Hasan al-Basri rahimahullah memberikan maqolah emas yang sangat legendaris:
-                <span class="italic text-slate-600 dark:text-slate-300">"Sesungguhnya Allah tidak menjadikan batas akhir bagi amal orang mukmin selain kematiannya. Istiqomah dalam kebaikan setelah bertaubat adalah tanda nyata diterimanya amal terdahulu."</span>
-                Maka jagalah konsistensi dalam mengamalkan <strong>${point}</strong> ini agar kita wafat dalam keadaan husnul khatimah.
+                Marilah kita hiasi hari-hari kita dengan lisan yang basah akan hamdalah dan hati yang rida atas segala ketentuan-Nya, sembari istiqomah mengamalkan nilai-nilai <strong>${point}</strong>.
               </p>
               `;
+              appNyataHTML = `
+                <strong>Aplikasi Nyata & Tantangan Zaman:</strong> Biasakan mencatat atau merenungi tiga nikmat yang kita terima setiap harinya sebelum tidur, sebagai terapi spiritual melatih rasa syukur dan qana'ah berlandaskan nilai <strong>${point}</strong>.
+              `;
             }
-
-            appNyataHTML = `
-              <strong>Aplikasi Nyata & Tantangan Zaman:</strong> Keistiqomahan merawat <strong>${point}</strong> membutuhkan support system berupa lingkungan yang baik dan bersahabat. Di dunia maya, pilihlah untuk mem-follow akun-akun yang menyejukkan hati dan menjauhkan kita dari perdebatan sia-sia. Di dunia nyata, sering-seringlah beriktikaf di masjid dan berkumpul dengan majelis orang-orang shaleh yang senantiasa menasihati kita dalam kebenaran dan kesabaran.
-            `;
           }
 
           contentParagraph = `
             ${closingHTML}
-            <p class="mt-4 bg-emerald-500/5 dark:bg-emerald-500/10 p-5 rounded-xl border-l-4 border-emerald-500 text-slate-700 dark:text-slate-300 italic leading-relaxed text-sm">
+            <div class="mt-4 bg-emerald-500/5 dark:bg-emerald-500/10 p-5 rounded-xl border-l-4 border-emerald-500 text-slate-700 dark:text-slate-300 italic leading-relaxed text-sm">
               ${appNyataHTML}
-            </p>
+            </div>
           `;
         }
       } else if (lang === 'jv') {
         if (index === 0) {
           contentParagraph = `
             <p class="mb-4">
-              Magepokan kaliyan poin kapisan ingkang dados rukun rembag, inggih punika babagan <strong>${point}</strong>. Wonten ing piwulang Islam ingkang agung, pangertosan ingkang lebet babagan punika boten namung dados rembag pikiran kemawon, nanging minangka pondasi utami ingkang nemtokaken bakoh utawi ringkihing iman kita dhumateng Allah SWT. Tanpa wontenipun pangertosan ingkang cetha, sawijining Muslim bakal gampil sanget kegiles dening ombak syubhat lan syahwat jaman sakpunika.
+              Magepokan kaliyan poin kapisan ingkang dados rukun rembag, inggih punika babagan <strong>${translatedPoint}</strong>. Wonten ing piwulang Islam ingkang agung, pangertosan ingkang lebet babagan punika boten namung dados rembag pikiran kemawon, nanging minangka pondasi utami ingkang nemtokaken bakoh utawi ringkihing iman kita dhumateng Allah SWT. Tanpa wontenipun pangertosan ingkang cetha, sawijining Muslim bakal gampil sanget kegiles dening ombak syubhat lan syahwat jaman sakpunika.
             </p>
             <p class="mb-4">
               Gusti Allah SWT wonten ing Kitab Suci Al-Qur'an paring dhawuh supados kita ngginakaken akal sehat lan manah kagem nggalih babagan punika kanthi sae lan terus-terusan. Pangertosan ingkang leres bakal nglairaken rasa wedi ingkang dibarengi rasa tresna dhumateng Allah, saingga kita saged nindakaken sedaya amalan kanthi ikhlas.
             </p>
             <p class="mt-4 bg-emerald-500/5 dark:bg-emerald-500/10 p-5 rounded-xl border-l-4 border-emerald-500 text-slate-700 dark:text-slate-300 italic leading-relaxed text-sm">
-              <strong>Aplikasi Nyata ing Gesang Padintenan:</strong> Ing jaman digital punika, mangga kita luangaken wekdal kagem maos lan nggalih babagan <strong>${point}</strong> punika, mligi kagem njaga kulawarga kita saking bebaya dunya lan akhirat.
+              <strong>Aplikasi Nyata ing Gesang Padintenan:</strong> Ing jaman digital punika, mangga kita luangaken wekdal kagem maos lan nggalih babagan <strong>${translatedPoint}</strong> punika, mligi kagem njaga kulawarga kita saking bebaya dunya lan akhirat.
             </p>
           `;
         } else if (index === 1) {
           contentParagraph = `
             <p class="mb-4">
-              Salajengipun, poin kaping kalih ingkang boten kalah wigati inggih punika ngenani <strong>${point}</strong>. Amalan nyata punika wujud saking iman ingkang tulus wonten ing manah. Iman tanpa amal punika kados dene wit ingkang rimbun nanging boten nate ngasilaken woh; katingal endah nanging boten paring manfaat kagem tiyang sanes.
+              Salajengipun, poin kaping kalih ingkang boten kalah wigati inggih punika ngenani <strong>${translatedPoint}</strong>. Amalan nyata punika wujud saking iman ingkang tulus wonten ing manah. Iman tanpa amal punika kados dene wit ingkang rimbun nanging boten nate ngasilaken woh; katingal endah nanging boten paring manfaat kagem tiyang sanes.
             </p>
             <p class="mb-4">
               Para ulama bilih iman punika dipun buktikaken kanthi tumindak ingkang shaleh wonten ing gesang padintenan. Menawi iman kita kiat, mila kita badhe gampil nindakaken kesaenan lan nebihi sedaya kemaksiatan ingkang dipun sengit dening Gusti Allah.
             </p>
             <p class="mt-4 bg-emerald-500/5 dark:bg-emerald-500/10 p-5 rounded-xl border-l-4 border-emerald-500 text-slate-700 dark:text-slate-300 italic leading-relaxed text-sm">
-              <strong>Aplikasi Nyata ing Gesang Padintenan:</strong> Wujud nyata saking nindakaken <strong>${point}</strong> inggih punika njaga kejujuran ing pakaryan lan nebihi transaksi ingkang haram kados judi lan pinjol.
+              <strong>Aplikasi Nyata ing Gesang Padintenan:</strong> Wujud nyata saking nindakaken <strong>${translatedPoint}</strong> inggih punika njaga kejujuran ing pakaryan lan nebihi transaksi ingkang haram kados judi lan pinjol.
             </p>
           `;
         } else {
           contentParagraph = `
             <p class="mb-4">
-              Dene poin kaping tiga kagem nyampurnakaken sedaya inggih punika babagan <strong>${point}</strong>. Njaga keistiqomahan punika pancen awrat sanget, nanging kanthi pitulungan saking Allah SWT, kita mesthi saged ngadhepi sedaya pacoben lan fitnah ing jaman akhir punika.
+              Dene poin kaping tiga kagem nyampurnakaken sedaya inggih punika babagan <strong>${translatedPoint}</strong>. Njaga keistiqomahan punika pancen awrat sanget, nanging kanthi pitulungan saking Allah SWT, kita mesthi saged ngadhepi sedaya pacoben lan fitnah ing jaman akhir punika.
             </p>
             <p class="mb-4">
               Supados saged istiqomah, kita kedah tansah ngresiki manah saking penyakit batin kados sombong, riya', lan hubbud-dunya (tresna ndonya ingkang kelangkung). Mangga kita gantos penyakit punika kanthi sifat ikhlas lan pasrah sumeleh (tawakal) dhumateng takdiripun Allah SWT.
             </p>
             <p class="mt-4 bg-emerald-500/5 dark:bg-emerald-500/10 p-5 rounded-xl border-l-4 border-emerald-500 text-slate-700 dark:text-slate-300 italic leading-relaxed text-sm">
-              <strong>Aplikasi Nyata ing Gesang Padintenan:</strong> Mangga kita pados lingkungan lan kanca ingkang shaleh kagem njaga keistiqomahan kita wonten ing margi <strong>${point}</strong> punika.
+              <strong>Aplikasi Nyata ing Gesang Padintenan:</strong> Mangga kita pados lingkungan lan kanca ingkang shaleh kagem njaga keistiqomahan kita wonten ing margi <strong>${translatedPoint}</strong> punika.
             </p>
           `;
         }
-      } 
-      else if (lang === 'su') {
+      } else if (lang === 'su') {
         if (index === 0) {
           contentParagraph = `
             <p class="mb-4">
-              Perkawis poin kahiji anu kacida utami, nyaeta ngeunaan <strong>${point}</strong>. Dina ajaran Islam anu mulia, pamahaman anu jero ngeunaan perkawis ieu sanés ngan saukur obrolan wungkul, tapi mangrupikeun pondasi awal anu nangtukeun kokohna kaimanan urang ka Allah SWT. Lamun taya pamahaman anu bener, kaimanan urang bakal gampang oyag ku gogoda jaman.
+              Perkawis poin kahiji anu kacida utami, nyaeta ngeunaan <strong>${translatedPoint}</strong>. Dina ajaran Islam anu mulia, pamahaman anu jero ngeunaan perkawis ieu sanés ngan saukur obrolan wungkul, tapi mangrupikeun pondasi awal anu nangtukeun kokohna kaimanan urang ka Allah SWT. Lamun taya pamahaman anu bener, kaimanan urang bakal gampang oyag ku gogoda jaman.
             </p>
             <p class="mb-4">
               Allah SWT dina Al-Qur'an salawasna ngajak urang sadaya sangkan ngagunakeun akal sareng manah pikeun ngalenyepan perkawis ieu sacara jero. Pamahaman anu bener bakal ngahirupkeun rasa sieun anu dibarengan ku rasa cinta ka hadirat Allah SWT.
             </p>
             <p class="mt-4 bg-emerald-500/5 dark:bg-emerald-500/10 p-5 rounded-xl border-l-4 border-emerald-500 text-slate-700 dark:text-slate-300 italic leading-relaxed text-sm">
-              <strong>Aplikasi Nyata dina Kahirupan:</strong> Mangga urang gunakeun waktos urang unggal dinten kanggo diajar ngeunaan <strong>${point}</strong> supados akidah urang sareng kulawarga salawasna kajaga tina rupa-rupa fitnah.
+              <strong>Aplikasi Nyata dina Kahirupan:</strong> Mangga urang gunakeun waktos urang unggal dinten kanggo diajar ngeunaan <strong>${translatedPoint}</strong> supados akidah urang sareng kulawarga salawasna kajaga tina rupa-rupa fitnah.
             </p>
           `;
         } else if (index === 1) {
           contentParagraph = `
             <p class="mb-4">
-              Salajengna, poin kadua anu teu kirang pentingna nyaeta ngeunaan <strong>${point}</strong>. Amalan nyata tina kaimanan urang kedah dibuktikeun dina kahirupan sapopoé. Para ulama parantos nyebatkeun yén kaimanan anu sajati nyaeta anu napel dina jero manah sareng dibuktikeun ku amal perbuatan anu ikhlas. Kaimanan tanpa amal mah sapertos tangkal anu rindang tapi teu buahan.
+              Salajengna, poin kadua anu teu kirang pentingna nyaeta ngeunaan <strong>${translatedPoint}</strong>. Amalan nyata tina kaimanan urang kedah dibuktikeun dina kahirupan sapopoé. Para ulama parantos nyebatkeun yén kaimanan anu sajati nyaeta anu napel dina jero manah sareng dibuktikeun ku amal perbuatan anu ikhlas. Kaimanan tanpa amal mah sapertos tangkal anu rindang tapi teu buahan.
             </p>
             <p class="mb-4">
               Ku kituna, dina kahirupan sapopoé, urang kedah ngabuktikeun cinta urang ka Allah ku cara ngalaksanakeun amalan-amalan anu shaleh dumasar kana tuntunan anu parantos diajarkeun ku Rasulullah SAW.
             </p>
             <p class="mt-4 bg-emerald-500/5 dark:bg-emerald-500/10 p-5 rounded-xl border-l-4 border-emerald-500 text-slate-700 dark:text-slate-300 italic leading-relaxed text-sm">
-              <strong>Aplikasi Nyata dina Kahirupan:</strong> Bukti nyata tina ngajalankeun <strong>${point}</strong> di jaman ayeuna nyaeta ku cara milari kasab atanapi rezeki anu halal sareng nebihan sagala rupi paculukan finansial anu haram.
+              <strong>Aplikasi Nyata dina Kahirupan:</strong> Bukti nyata tina ngajalankeun <strong>${translatedPoint}</strong> di jaman ayeuna nyaeta ku cara milari kasab atanapi rezeki anu halal sareng nebihan sagala rupi paculukan finansial anu haram.
             </p>
           `;
         } else {
           contentParagraph = `
             <p class="mb-4">
-              Dupi poin katilu anu nyampurnakeun sadayana nyaeta ngeunaan <strong>${point}</strong>. Ngajaga kaiqomahan atanapi konsistensi dina kahoyong kasaean memang meryogikeun perjuangan anu ageung, tapi ku ayana pitulung ti Allah SWT, urang bakal dipasihan kakuatan pikeun nyanghareupan gogoda jaman.
+              Dupi poin katilu anu nyampurnakeun sadayana nyaeta ngeunaan <strong>${translatedPoint}</strong>. Ngajaga kaiqomahan atanapi konsistensi dina kahoyong kasaean memang meryogikeun perjuangan anu ageung, tapi ku ayana pitulung ti Allah SWT, urang bakal dipasihan kakuatan pikeun nyanghareupan gogoda jaman.
             </p>
             <p class="mb-4">
               Supados tiasa istiqomah, urang kedah proaktif ngabersihan jiwa (tazkiyatun nufus) tina panyakit hate sapertos sombong, riya', sareng mikacinta dunya anu kaleuleuwihi. Hayu urang ganti ku rasa ikhlas sareng tawakal anu total ka Allah.
             </p>
             <p class="mt-4 bg-emerald-500/5 dark:bg-emerald-500/10 p-5 rounded-xl border-l-4 border-emerald-500 text-slate-700 dark:text-slate-300 italic leading-relaxed text-sm">
-              <strong>Aplikasi Nyata dina Kahirupan:</strong> Sangkan urang tetep istiqomah dina ngajalankeun <strong>${point}</strong>, mangga urang sering sumping ka majelis taklim sareng kumpul sareng jalmi-jalmi shaleh.
+              <strong>Aplikasi Nyata dina Kahirupan:</strong> Sangkan urang tetep istiqomah dina ngajalankeun <strong>${translatedPoint}</strong>, mangga urang sering sumping ka majelis taklim sareng kumpul sareng jalmi-jalmi shaleh.
             </p>
           `;
         }
-      } 
-      else if (lang === 'ms') {
+      } else if (lang === 'ms') {
         if (index === 0) {
           contentParagraph = `
             <p class="mb-4">
-              Mengenai poin pertama yang sangat mendasar ini, iaitu tentang <strong>${point}</strong>. Di dalam ajaran Islam yang mulia, kesedaran dan kefahaman yang mendalam mengenai hal ini bukanlah sekadar wacana intelektual semata-mata, melainkan fondasi awal yang menentukan kukuh atau rapuhnya seluruh bangunan kesalehan seorang hamba.
+              Mengenai poin pertama yang sangat mendasar ini, iaitu tentang <strong>${translatedPoint}</strong>. Di dalam ajaran Islam yang mulia, kesedaran dan kefahaman yang mendalam mengenai hal ini bukanlah sekadar wacana intelektual semata-mata, melainkan fondasi awal yang menentukan kukuh atau rahbunya seluruh bangunan kesalehan seorang hamba.
             </p>
             <p class="mb-4">
               Allah SWT di dalam Kitab-Nya yang suci sentiasa menyeru orang-orang beriman agar merenungi hal ini secara mendalam. Pemahaman yang betul akan melahirkan rasa takut yang disertai pengagungan kepada Allah SWT, yang menuntun kita untuk menyelaraskan setiap ucapan dan tindakan dengan syariat-Nya.
             </p>
             <p class="mt-4 bg-emerald-500/5 dark:bg-emerald-500/10 p-5 rounded-xl border-l-4 border-emerald-500 text-slate-700 dark:text-slate-300 italic leading-relaxed text-sm">
-              <strong>Aplikasi Nyata & Cabaran Zaman:</strong> Di era digital ini, marilah kita meluangkan masa setiap hari untuk merenungi hakikat <strong>${point}</strong> ini, serta menjauhkan diri daripada kelalaian media sosial yang merosakkan fokus rohani kita.
+              <strong>Aplikasi Nyata & Cabaran Zaman:</strong> Di era digital ini, marilah kita meluangkan masa setiap hari untuk merenungi hakikat <strong>${translatedPoint}</strong> ini, serta menjauhkan diri daripada kelalaian media sosial yang merosakkan fokus rohani kita.
             </p>
           `;
         } else if (index === 1) {
           contentParagraph = `
             <p class="mb-4">
-              Seterusnya, langkah kedua yang tidak kurang pentingnya ialah memahami dan mengamalkan secara konkrit mengenai <strong>${point}</strong>. Pada tahapan praktikal ini, keimanan kita dituntut untuk dijelmakan menjadi aksi nyata, iaitu amal soleh yang memberikan manfaat. Iman tanpa amal adalah seperti pohon yang rimbun tetapi tidak berbuah.
+              Seterusnya, langkah kedua yang tidak kurang pentingnya ialah memahami dan mengamalkan secara konkrit mengenai <strong>${translatedPoint}</strong>. Pada tahapan praktikal ini, keimanan kita dituntut untuk menjelmakan menjadi aksi nyata, iaitu amal soleh yang memberikan manfaat. Iman tanpa amal adalah seperti pohon yang rimbun tetapi tidak berbuah.
             </p>
             <p class="mb-4">
               Sebagaimana kata para ulama, iman sejati ialah apa yang tertanam kukuh di dalam hati dan dibuktikan dengan amal perbuatan yang ikhlas. Kita mesti membuktikan keimanan kita dalam bentuk pergaulan yang baik, kejujuran dalam mencari rezeki, dan amanah dalam tugasan harian.
             </p>
             <p class="mt-4 bg-emerald-500/5 dark:bg-emerald-500/10 p-5 rounded-xl border-l-4 border-emerald-500 text-slate-700 dark:text-slate-300 italic leading-relaxed text-sm">
-              <strong>Aplikasi Nyata & Cabaran Zaman:</strong> Bukti keimanan kita dalam mempraktikkan <strong>${point}</strong> adalah dengan menolak sekeras-kerasnya riba, rasuah, judi internet, dan segala kemudahan finansial yang haram.
+              <strong>Aplikasi Nyata & Cabaran Zaman:</strong> Bukti keimanan kita dalam mempraktikkan <strong>${translatedPoint}</strong> adalah dengan menolak sekeras-kerasnya riba, rasuah, judi internet, dan segala kemudahan finansial yang haram.
             </p>
           `;
         } else {
           contentParagraph = `
             <p class="mb-4">
-              Poin ketiga yang menyempurnakan seluruh perjalanan rohani kita ialah sentiasa memelihara dan memperkukuh <strong>${point}</strong>. Mengekalkan kebaikan memerlukan keistiqomahan (konsistensi) yang tinggi dalam menghadapi dugaan hidup akhir zaman.
+              Poin ketiga yang menyempurnakan seluruh perjalanan rohani kita ialah sentiasa memelihara dan memperkukuh <strong>${translatedPoint}</strong>. Mengekalkan kebaikan memerlukan keistiqomahan (konsistensi) yang tinggi dalam menghadapi dugaan hidup akhir zaman.
             </p>
             <p class="mb-4">
               Untuk mencapai istiqomah, kita perlu membersihkan jiwa daripada segala penyakit batin seperti riya', hasad, dan cinta dunia yang melampau. Gantikanlah dengan sifat reda, syukur, dan tawakal sepenuhnya kepada ketentuan qada' dan qadar Allah SWT.
             </p>
             <p class="mt-4 bg-emerald-500/5 dark:bg-emerald-500/10 p-5 rounded-xl border-l-4 border-emerald-500 text-slate-700 dark:text-slate-300 italic leading-relaxed text-sm">
-              <strong>Aplikasi Nyata & Cabaran Zaman:</strong> Marilah kita sentiasa mendampingi para ulama, menghadiri majelis ilmu, dan memakmurkan masjid demi memelihara keistiqomahan kita dalam <strong>${point}</strong>.
+              <strong>Aplikasi Nyata & Cabaran Zaman:</strong> Marilah kita sentiasa mendampingi para ulama, menghadiri majelis ilmu, dan memakmurkan masjid demi memelihara keistiqomahan kita dalam <strong>${translatedPoint}</strong>.
             </p>
           `;
         }
-      } 
-      else if (lang === 'bug') {
+      } else if (lang === 'bug') {
         if (index === 0) {
           contentParagraph = `
             <p class="mb-4">
-              Passaleng poin pammulanna, iyami ritu <strong>${point}</strong>. Ri laleng pappasenna agama Islam malebbi'na, akkatenningang ri passaleng iye' ritu lambang madécéng untu' makkatenning ri aqidah tauhidta lao ri Allah SWT. Narekko de'gaga pappahang iye', umma' sellengé gampangngi ri giling-giling ri sining fitnah jaman sakpunika.
+              Passaleng poin pammulanna, iyami ritu <strong>${translatedPoint}</strong>. Ri laleng pappasenna agama Islam malebbi'na, akkatenningang ri passaleng iye' ritu lambang madécéng untu' makkatenning ri aqidah tauhidta lao ri Allah SWT. Narekko de'gaga pappahang iye', umma' sellengé gampangngi ri giling-giling ri sining fitnah jaman sakpunika.
             </p>
             <p class="mb-4">
               Allah Ta'ala ri laleng Kitta' Marajaé marasa asennangeng lao ri sining rupa tau iya ngerang akkalena ngerang ateitta untu' makkulaga ngerang akkaleta ngerang ateitta madécéng ri passaleng iye'.
             </p>
             <p class="mt-4 bg-emerald-500/5 dark:bg-emerald-500/10 p-5 rounded-xl border-l-4 border-emerald-500 text-slate-700 dark:text-slate-300 italic leading-relaxed text-sm">
-              <strong>Aplikasi Nyata ri Laleng Lalenna:</strong> Mangga kita meluangaken wekdal kagem maos lan nggalih babagan <strong>${point}</strong> punika, mligi kagem njaga kulawarga kita saking bebaya jaman.
+              <strong>Aplikasi Nyata ri Laleng Lalenna:</strong> Mangga kita meluangaken wekdal kagem maos lan nggalih babagan <strong>${translatedPoint}</strong> punika, mligi kagem njaga kulawarga kita saking bebaya jaman.
             </p>
           `;
         } else if (index === 1) {
           contentParagraph = `
             <p class="mb-4">
-              Maddiona, poin maduanna iya de'to nagaga maseddingngi ri passaleng <strong>${point}</strong>. Gau' madécéng iya makkatenningngé ri gau'na ritu asennangeng lao ri seddi-seddi rupa tau. Pappasenna para ulamaé makkeda gau' madécéng iye' ritu rupa nyata'na akkatenningang ateitta.
+              Maddiona, poin maduanna iya de'to nagaga maseddingngi ri passaleng <strong>${translatedPoint}</strong>. Gau' madécéng iya makkatenningngé ri gau'na ritu asennangeng lao ri seddi-seddi rupa tau. Pappasenna para ulamaé makkeda gau' madécéng iye' ritu rupa nyata'na akkatenningang ateitta.
             </p>
             <p class="mb-4">
               Akkatenningang ateitta ritu sining nyata'na ri laleng sining gau' madécéng padintenan, kados nyampurnakaken akhalak nennia megau' sining amalan sunnahé.
             </p>
             <p class="mt-4 bg-emerald-500/5 dark:bg-emerald-500/10 p-5 rounded-xl border-l-4 border-emerald-500 text-slate-700 dark:text-slate-300 italic leading-relaxed text-sm">
-              <strong>Aplikasi Nyata ri Laleng Lalenna:</strong> Wujud nyata saking nindakaken <strong>${point}</strong> inggih punika njaga kejujuran ing pakaryan lan nebihi transaksi ingkang haram kados judi.
+              <strong>Aplikasi Nyata ri Laleng Lalenna:</strong> Wujud nyata saking nindakaken <strong>${translatedPoint}</strong> inggih punika njaga kejujuran ing pakaryan lan nebihi transaksi ingkang haram kados judi.
             </p>
           `;
         } else {
           contentParagraph = `
             <p class="mb-4">
-              Poin matellunna iya mappasukkke' manengngi sining pakkasiwiangta iyami ritu <strong>${point}</strong>. Makkatenning ri gau' madécéng ritu memeng mawatang, narekko ri amasei ri Allah SWT weddingngi ri papoleng lalenna madécéng ritu.
+              Poin matellunna iya mappasukkke' manengngi sining pakkasiwiangta iyami ritu <strong>${translatedPoint}</strong>. Makkatenning ri gau' madécéng ritu memeng mawatang, narekko ri amasei ri Allah SWT weddingngi ri papoleng lalenna madécéng ritu.
             </p>
             <p class="mb-4">
               Maccingnge ateitta ritu sining lambang ketaatan lurusé, iya weddingngi ri papoleng asennangeng batin nerekko sumeleh dhumateng takdiripun Allah SWT.
             </p>
             <p class="mt-4 bg-emerald-500/5 dark:bg-emerald-500/10 p-5 rounded-xl border-l-4 border-emerald-500 text-slate-700 dark:text-slate-300 italic leading-relaxed text-sm">
-              <strong>Aplikasi Nyata ri Laleng Lalenna:</strong> Mangga kita pados lingkungan lan kanca ingkang shaleh kagem njaga keistiqomahan kita wonten ing margi <strong>${point}</strong> punika.
+              <strong>Aplikasi Nyata ri Laleng Lalenna:</strong> Mangga kita pados lingkungan lan kanca ingkang shaleh kagem njaga keistiqomahan kita wonten ing margi <strong>${translatedPoint}</strong> punika.
             </p>
           `;
         }
-      } 
-      else if (lang === 'bjn') {
+      } else if (lang === 'bjn') {
         if (index === 0) {
           contentParagraph = `
             <p class="mb-4">
-              Mengenai poin kapertama nang dasar banar ini, yaitu tentang <strong>${point}</strong>. Di dalam ajaran Islam nang mulia, paham wan sadar nang dalam ngenai hal ini lain am sekadar pandiran haja, melainkan pondasi awal nang menetukan kukuh wan kadasnya keshalehan kita sebagai hamba Allah. Lamun kada paham, iman kita gampang banar digulung cobaan jaman.
+              Mengenai poin kapertama nang dasar banar ini, yaitu tentang <strong>${translatedPoint}</strong>. Di dalam ajaran Islam nang mulia, paham wan sadar nang dalam ngenai hal ini lain am sekadar pandiran haja, melainkan pondasi awal nang menetukan kukuh wan kadasnya keshalehan kita sebagai hamba Allah. Lamun kada paham, iman kita gampang banar digulung cobaan jaman.
             </p>
             <p class="mb-4">
               Allah SWT di dalam Al-Qur'an menyuruh kita gasan mamikirakan hal ini baimbai gasan membakar rasa takutan kita nang dibarengi rasa cinta lawan Allah SWT, sahingga kelakuan kita sesuai lawan syariat-Nya.
             </p>
             <p class="mt-4 bg-emerald-500/5 dark:bg-emerald-500/10 p-5 rounded-xl border-l-4 border-emerald-500 text-slate-700 dark:text-slate-300 italic leading-relaxed text-sm">
-              <strong>Praktek Nyata Matan Kahidupan:</strong> Ayo kita luangakan waktu gasan belajar wan mamikirakan ngenai <strong>${point}</strong> ini, supaya akidah diri wan kaluarga salajur aman wan barokah.
+              <strong>Praktek Nyata Matan Kahidupan:</strong> Ayo kita luangakan waktu gasan belajar wan mamikirakan ngenai <strong>${translatedPoint}</strong> ini, supaya akidah diri wan kaluarga salajur aman wan barokah.
             </p>
           `;
         } else if (index === 1) {
           contentParagraph = `
             <p class="mb-4">
-              Salanajurnya, langkah kadua nang kada kalah pentingnya yaitu paham wan mengamalaakan secara nyata ngenai <strong>${point}</strong>. Pada tingkatan praktis ini, iman kita dituntut gasan jadi bukti nyata beramal shaleh gasan banyaki kegunaan gasan sesama. Iman nang kada digawi lawan amal ibarat pohon nang rimbun tapi kadada buahnya sama sekali.
+              Salanajurnya, langkah kadua nang kada kalah pentingnya yaitu paham wan mengamalaakan secara nyata ngenai <strong>${translatedPoint}</strong>. Pada tingkatan praktis ini, iman kita dituntut gasan jadi bukti nyata beramal shaleh gasan banyaki kegunaan gasan sesama. Iman nang kada digawi lawan amal ibarat pohon nang rimbun tapi kadada buahnya sama sekali.
             </p>
             <p class="mb-4">
               Kaya wasiat para ulama bilih iman bujur itu ada di dalam hati wan digawi lawan kelakuan. Kita musti membuktikan kaimanan kita lawan kelakuan jujur gasan becari nafkah halal wan amanah dalam barataan gawean.
             </p>
             <p class="mt-4 bg-emerald-500/5 dark:bg-emerald-500/10 p-5 rounded-xl border-l-4 border-emerald-500 text-slate-700 dark:text-slate-300 italic leading-relaxed text-sm">
-              <strong>Praktek Nyata Matan Kahidupan:</strong> Bukti kaimanan nyata dalam <strong>${point}</strong> jaman wahini yaitu wani menulak barataan tawaran riba, judi online, pinjol ilegal, wan becari nafkah nang halal haja.
+              <strong>Praktek Nyata Matan Kahidupan:</strong> Bukti kaimanan nyata dalam <strong>${translatedPoint}</strong> jaman wahini yaitu wani menulak barataan tawaran riba, judi online, pinjol ilegal, wan becari nafkah nang halal haja.
             </p>
           `;
         } else {
           contentParagraph = `
             <p class="mb-4">
-              Poin katiga nang menyampurnakan barataan perjalanan rohani kita yaitu menjaga wan mengukuhakan <strong>${point}</strong>. Menjaga kebaikan wan keistiqomahan pancen ganal banar cobaannya, tapi lawan berkat pertolongan Allah SWT kita pasti kawa melewati barataan fitnah akhir zaman ini.
+              Poin katiga nang menyampurnakan barataan perjalanan rohani kita yaitu menjaga wan mengukuhakan <strong>${translatedPoint}</strong>. Menjaga kebaikan wan keistiqomahan pancen ganal banar cobaannya, tapi lawan berkat pertolongan Allah SWT kita pasti kawa melewati barataan fitnah akhir zaman ini.
             </p>
             <p class="mb-4">
               Supaya kawa istiqomah, kita musti menyuciakan jiwa matan penyakit batin kaya sombong, riya', wan rakus lawan duniawi. Ayo ganti lawan rasa ikhlas wan pasrah tawakal lawan ketetapan Allah SWT.
             </p>
             <p class="mt-4 bg-emerald-500/5 dark:bg-emerald-500/10 p-5 rounded-xl border-l-4 border-emerald-500 text-slate-700 dark:text-slate-300 italic leading-relaxed text-sm">
-              <strong>Praktek Nyata Matan Kahidupan:</strong> Supaya kita kawal istiqomah mengamalaakan <strong>${point}</strong>, rajini sumping ka majelis ilmu wan bekumpul lawan urang-urang shaleh.
+              <strong>Praktek Nyata Matan Kahidupan:</strong> Supaya kita kawal istiqomah mengamalaakan <strong>${translatedPoint}</strong>, rajini sumping ka majelis ilmu wan bekumpul lawan urang-urang shaleh.
             </p>
           `;
         }
-      } 
-      else if (lang === 'ar') {
+      } else if (lang === 'ar') {
         if (index === 0) {
           contentParagraph = `
             <p class="mb-4">
-              أما بالنسبة للنقطة الأولى والأساسية، وهي المتعلقة بـ <strong>${point}</strong>. ففي شريعة الإسلام الغراء، ليس فهم هذا الأمر مجرد ترف فكري أو نقاش نظري، بل هو الركيزة الأساسية والعقيدة الراسخة التي يبنى عليها إيمان العبد وصلاحه. وبدون هذا الفهم الواضح واليقين الثابت، يسهل على المسلم التذبذب والانجراف وراء الشهوات والشبهات في هذا العصر المليء بالفتن والمغريات.
+              أما بالنسبة للنقطة الأولى والأساسية، وهي المتعلقة بـ <strong>${translatedPoint}</strong>. ففي شريعة الإسلام الغراء، ليس فهم هذا الأمر مجرد ترف فكري أو نقاش نظري، بل هو الركيزة الأساسية والعقيدة الراسخة التي يبنى عليها إيمان العبد وصلاحه. وبدون هذا الفهم الواضح واليقين الثابت، يسهل على المسلم التذبذب والانجراف وراء الشهوات والشبهات في هذا العصر المليء بالفتن والمغريات.
             </p>
             <p class="mb-4">
               لقد حثنا الله سبحانه وتعالى في كتابه الكريم على تفكر وتأمل هذا الأمر، ليتولد في قلوبنا الخوف المقترن بالمحبة والتعظيم لله عز وجل، مما يدفعنا إلى توجيه كل أقوالنا وأعمالنا وحركاتنا وسكناتنا وفق ما يرضي الله سبحانه وتعالى.
             </p>
             <p class="mt-4 bg-emerald-500/5 dark:bg-emerald-500/10 p-5 rounded-xl border-l-4 border-emerald-500 text-slate-700 dark:text-slate-300 italic leading-relaxed text-sm">
-              <strong>التطبيق العملي في الحياة:</strong> في هذا العصر الرقمي، يجب علينا تخصيص جزء من وقتنا يوميًا لنتفكر في حقيقة <strong>${point}</strong> ونربي أولادنا وأهلينا عليها، لنحميهم من المهالك والاعتقادات الفاسدة.
+              <strong>التطبيق العملي في الحياة:</strong> في هذا العصر الرقمي، يجب علينا تخصيص جزء من وقتنا يوميًا لنتفكر في حقيقة <strong>${translatedPoint}</strong> ونربي أولادنا وأهلينا عليها، لنحميهم من المهالك والاعتقادات الفاسدة.
             </p>
           `;
         } else if (index === 1) {
           contentParagraph = `
             <p class="mb-4">
-              ثم إن الخطوة الثانية التي لا تقل أهمية عن الأولى هي العمل بمقتضى <strong>${point}</strong> وتطبيقه في واقعنا المعاش. فالعقيدة والإيمان لا بد لهما من ثمرة تظهر على الجوارح، وهي العمل الصالح. والإيمان بلا عمل كشجرة بلا ثمر، لا ينفع صاحبها ولا مجتمعه.
+              ثم إن الخطوة الثانية التي لا تقل أهمية عن الأولى هي العمل بمقتضى <strong>${translatedPoint}</strong> وتطبيقه في واقعنا المعاش. فالعقيدة والإيمان لا بد لهما من ثمرة تظهر على الجوارح، وهي العمل الصالح. والإيمان بلا عمل كشجرة بلا ثmer، لا ينفع صاحبها ولا مجتمعه.
             </p>
             <p class="mb-4">
               وقد أثر عن السلف الصالح رضي الله عنهم قولهم: <em>"ليس الإيمان بالتمني ولا بالتحلي، ولكن الإيمان ما وقر في القلب وصدقه العمل."</em> فلنثبت صدق إيماننا بحسن المعاملة والأمانة والصدق في كسب لقمة العيش والبعد عن المحرمات.
             </p>
             <p class="mt-4 bg-emerald-500/5 dark:bg-emerald-500/10 p-5 rounded-xl border-l-4 border-emerald-500 text-slate-700 dark:text-slate-300 italic leading-relaxed text-sm">
-              <strong>التطبيق العملي في الحياة:</strong> إن أعظم مظهر للعمل بـ <strong>${point}</strong> في زماننا هو اجتناب كسب المال الحرام بشتى صوره، كالقمار الإلكتروني والربا والرشوة، والصبر على الكسب الحلال الطيب.
+              <strong>التطبيق العملي في الحياة:</strong> إن أعظم مظهر للعمل بـ <strong>${translatedPoint}</strong> في زماننا هو اجتناب كسب المال الحرام بشتى صوره، كالقمار الإلكتروني والربا والرشوة، والصبر على الكسب الحلال الطيب.
             </p>
           `;
         } else {
           contentParagraph = `
             <p class="mb-4">
-              وأما النقطة الثالثة التي تكتمل بها مسيرتنا الإيمانية وتتوج بها أعمالنا فهي الثبات والاستمرار على <strong>${point}</strong>. فالاستقامة على الحق هي من أعظم التحديات التي يواجهها المسلم، وهي تحتاج إلى مجاهدة مستمرة وصبر عظيم وصحبة صالحة تعين على طاعة الله تعالى.
+              وأما النقطة الثالثة التي تكتمل بها مسيرتنا الإيمانية وتتوج بها أعمالنا فهي الثبات والاستمرار على <strong>${translatedPoint}</strong>. فالاستقامة على الحق هي من أعظم التحديات التي يواجهها المسلم، وهي تحتاج إلى مجاهدة مستمرة وصبر عظيم وصحبة صالحة تعين على طاعة الله تعالى.
             </p>
             <p class="mb-4">
               ولتحقيق الاستقامة والسبات، لا بد لنا من تطهير قلوبنا من أمراض القلوب كالكبر والرياء والحسد وحب الدنيا، واستبدالها بالإخلاص لله تعالى والتوكل عليه والرضا بقضائه وقدره، لتعيش نفوسنا مطمئنة طائعة لربها.
             </p>
             <p class="mt-4 bg-emerald-500/5 dark:bg-emerald-500/10 p-5 rounded-xl border-l-4 border-emerald-500 text-slate-700 dark:text-slate-300 italic leading-relaxed text-sm">
-              <strong>التطبيق العملي في الحياة:</strong> لكي نثبت على <strong>${point}</strong>، علينا بملازمة بيوت الله والمواظبة على قراءة القرآن وحضور مجالس العلم، ومرافقة الصالحين الذين يذكروننا بالله إذا نسينا.
+              <strong>التطبيق العملي في الحياة:</strong> لكي نثبت على <strong>${translatedPoint}</strong>، علينا بملازمة بيوت الله والمواظبة على قراءة القرآن وحضور مجالس العلم، ومرافقة الصالحين الذين يذكروننا بالله إذا نسينا.
             </p>
           `;
         }
-      } 
-      else if (lang === 'en') {
+      } else if (lang === 'en') {
         if (index === 0) {
           contentParagraph = `
             <p class="mb-4">
-              Regarding the first and most fundamental point, which is about <strong>${point}</strong>. In the noble teachings of Islam, a deep understanding of this matter is not merely an intellectual exercise, but the very foundation of our devotion to Allah. Without a clear and solid comprehension of this point, a Muslim will easily be swayed, shaken, and carried away by the storms of doubts (Shubuhat) and worldly desires (Shahawat) that characterize modern society.
+              Regarding the first and most fundamental point, which is about <strong>${translatedPoint}</strong>. In the noble teachings of Islam, a deep understanding of this matter is not merely an intellectual exercise, but the very foundation of our devotion to Allah. Without a clear and solid comprehension of this point, a Muslim will easily be swayed, shaken, and carried away by the storms of doubts (Shubuhat) and worldly desires (Shahawat) that characterize modern society.
             </p>
             <p class="mb-4">
               Allah SWT in His Holy Book constantly encourages believers to utilize their intellect and sound hearts to reflect deeply on this. Proper understanding breeds a sincere fear (Khashyah) accompanied by deep love and glorification of Allah SWT, which in turn guides us to align our speech, actions, and decisions with the boundaries of His Shariah.
             </p>
             <p class="mt-4 bg-emerald-500/5 dark:bg-emerald-500/10 p-5 rounded-xl border-l-4 border-emerald-500 text-slate-700 dark:text-slate-300 italic leading-relaxed text-sm">
-              <strong>Practical Application in Life:</strong> In this digital age, our biggest challenge is the flood of distractions. Let us allocate at least 15-30 minutes daily to disconnect from social media and reflect on <strong>${point}</strong>, ensuring our family's creed remains protected.
+              <strong>Practical Application in Life:</strong> In this digital age, our biggest challenge is the flood of distractions. Let us allocate at least 15-30 minutes daily to disconnect from social media and reflect on <strong>${translatedPoint}</strong>, ensuring our family's creed remains protected.
             </p>
           `;
         } else if (index === 1) {
           contentParagraph = `
             <p class="mb-4">
-              Moving forward, the second crucial step for all of us is to understand, internalize, and concretely implement <strong>${point}</strong>. At this practical level, all our theoretical knowledge of faith must translate into active, righteous deeds. Faith (Iman) without action is like a lush tree that never bears fruit; it might look beautiful from a distance, but it provides no real benefit.
+              Moving forward, the second crucial step for all of us is to understand, internalize, and concretely implement <strong>${translatedPoint}</strong>. At this practical level, all our theoretical knowledge of faith must translate into active, righteous deeds. Faith (Iman) without action is like a lush tree that never bears fruit; it might look beautiful from a distance, but it provides no real benefit.
             </p>
             <p class="mb-4">
               As the great Tabii scholar Al-Hasan al-Basri (may Allah have mercy on him) wisely remarked: <em>"Faith is not achieved through mere wishful thinking or outward adornments. Rather, true faith is that which is firmly rooted in the depths of the heart and validated through sincere, righteous actions."</em>
             </p>
             <p class="mt-4 bg-emerald-500/5 dark:bg-emerald-500/10 p-5 rounded-xl border-l-4 border-emerald-500 text-slate-700 dark:text-slate-300 italic leading-relaxed text-sm">
-              <strong>Practical Application in Life:</strong> The concrete manifestation of implementing <strong>${point}</strong> today is protecting our integrity and honesty. Amidst modern financial trials like online gambling and illegal loans, true faith is shown by rejecting all forbidden financial pathways and remaining patient with what is halal.
+              <strong>Practical Application in Life:</strong> The concrete manifestation of implementing <strong>${translatedPoint}</strong> today is protecting our integrity and honesty. Amidst modern financial trials like online gambling and illegal loans, true faith is shown by rejecting all forbidden financial pathways and remaining patient with what is halal.
             </p>
           `;
         } else {
           contentParagraph = `
             <p class="mb-4">
-              The third point that completes and perfects our spiritual journey is to continuously maintain and strengthen <strong>${point}</strong>. We must recognize that maintaining a good habit is often far more challenging and requires greater spiritual effort than initiating it. Sustaining these values demands unwavering consistency (Istiqamah) in our daily lives.
+              The third point that completes and perfects our spiritual journey is to continuously maintain and strengthen <strong>${translatedPoint}</strong>. We must recognize that maintaining a good habit is often far more challenging and requires greater spiritual effort than initiating it. Sustaining these values demands unwavering consistency (Istiqamah) in our daily lives.
             </p>
             <p class="mb-4">
               To attain this level of steadfastness, we must proactively engage in Tazkiyatun Nufus (purification of the soul) from spiritual diseases such as pride, showing off (Riya'), jealousy (Hasad), and excessive love for the material world. We must replace these with absolute sincerity, humility, and complete reliance (Tawakkul) upon Allah's decrees.
             </p>
             <p class="mt-4 bg-emerald-500/5 dark:bg-emerald-500/10 p-5 rounded-xl border-l-4 border-emerald-500 text-slate-700 dark:text-slate-300 italic leading-relaxed text-sm">
-              <strong>Practical Application in Life:</strong> Staying steadfast in <strong>${point}</strong> requires a spiritual support system. Surround yourself with righteous companions, routinely attend Islamic gatherings, and make the mosque your second home.
+              <strong>Practical Application in Life:</strong> Staying steadfast in <strong>${translatedPoint}</strong> requires a spiritual support system. Surround yourself with righteous companions, routinely attend Islamic gatherings, and make the mosque your second home.
             </p>
           `;
         }
@@ -1264,7 +1318,7 @@ export function generateOfflineSermon(sermon: SermonMetadata, lang: string, vari
           <span class="w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-950 flex items-center justify-center text-xs font-bold text-emerald-800 dark:text-emerald-300">
             ${index + 1}
           </span>
-          ${point}
+          ${translatedPoint}
         </h4>
         <div class="text-slate-600 dark:text-slate-300 text-sm md:text-base leading-relaxed md:leading-loose space-y-4 select-text">
           ${contentParagraph}
@@ -1299,9 +1353,17 @@ export function generateOfflineSermon(sermon: SermonMetadata, lang: string, vari
       <div class="arabic-block p-3.5 sm:p-5 md:p-6 bg-emerald-50/50 dark:bg-emerald-950/20 rounded-xl leading-[1.9] sm:leading-[2.2] md:leading-[2.5] text-right font-serif text-lg sm:text-xl md:text-2xl text-emerald-900 dark:text-emerald-200" style="direction: rtl;">
         ${firstKhutbahArabicIntro}
       </div>
-      <div class="p-3 bg-slate-100/70 dark:bg-slate-900/40 rounded-xl text-xs text-slate-500 dark:text-slate-400 italic leading-relaxed border border-slate-200/40 dark:border-slate-800/40">
-        <strong>Terjemahan Muqoddimah:</strong> ${selectedVar.translation}
-      </div>
+      ${lang !== 'ar' ? `
+      <details class="group bg-slate-100/50 dark:bg-slate-900/30 rounded-xl border border-slate-200/40 dark:border-slate-800/40 overflow-hidden">
+        <summary class="flex items-center justify-between p-3 text-xs font-semibold text-slate-500 dark:text-slate-400 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-900 transition-colors select-none">
+          <span>Terjemahan Muqoddimah</span>
+          <span class="text-[10px] text-emerald-700 dark:text-emerald-400 group-open:rotate-180 transition-transform">▼</span>
+        </summary>
+        <div class="p-3.5 pt-1 border-t border-slate-200/20 text-xs text-slate-600 dark:text-slate-300 italic leading-relaxed bg-slate-50/50 dark:bg-slate-900/20">
+          ${selectedVar.translation}
+        </div>
+      </details>
+      ` : ''}
     </div>
 
     <!-- LITURGICAL TRANSLATED GREETING & INTRO -->

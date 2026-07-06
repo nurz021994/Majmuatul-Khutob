@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "motion/react";
 import { Sparkles, Heart, BookOpen } from "lucide-react";
-import logoUrl from "../assets/logo.png";
+import AppLogo from "./AppLogo";
 
 interface SplashScreenProps {
   onStart: () => void;
@@ -46,13 +46,8 @@ export default function SplashScreen({ onStart }: SplashScreenProps) {
           <div className="absolute bottom-2 right-2 w-2 h-2 rounded-full bg-amber-400/60" />
 
           {/* Central Logo Symbol */}
-          <div className="absolute inset-4 rounded-xl md:rounded-2xl overflow-hidden border border-amber-400/40">
-            <img 
-              src={logoUrl} 
-              alt="Majmu'atul Khutob App Logo" 
-              className="w-full h-full object-cover" 
-              referrerPolicy="no-referrer" 
-            />
+          <div className="absolute inset-3 rounded-xl md:rounded-2xl flex items-center justify-center border border-amber-400/20 bg-emerald-950/40">
+            <AppLogo className="w-full h-full p-1" />
           </div>
         </motion.div>
 
