@@ -1,0 +1,18 @@
+{
+  "short_name": "Majmu'atul Khutob",
+  "name": "Majmu'atul Khutob - Khutbah Jum'at Setahun",
+  "description": "Koleksi Khutbah Jum'at lengkap selama setahun (12 bulan Hijriyah dan materi tematik aktual) dengan penjaminan keabsahan rukun khutbah, didukung mode teleprompter mimbar, catatan otomatis, and ekspor cetak Word/PDF.",
+  "icons": [
+    {
+      "src": "/logo.jpg",
+      "type": "image/jpeg",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#064E3B",
+  "theme_color": "#064E3B",
+  "display": "standalone",
+  "orientation": "portrait"
+}

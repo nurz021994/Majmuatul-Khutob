@@ -45,7 +45,14 @@ export default function SplashScreen({ onStart }: SplashScreenProps) {
           <div className="absolute bottom-2 right-2 w-2 h-2 rounded-full bg-amber-400/60" />
 
           {/* Central Logo Symbol */}
-          <BookOpen className="w-10 h-10 md:w-12 md:h-12 text-amber-400" />
+          <div className="absolute inset-4 rounded-xl md:rounded-2xl overflow-hidden border border-amber-400/40">
+            <img 
+              src="/logo.jpg" 
+              alt="Majmu'atul Khutob App Logo" 
+              className="w-full h-full object-cover" 
+              referrerPolicy="no-referrer" 
+            />
+          </div>
         </motion.div>
 
         {/* Welcome Tag */}

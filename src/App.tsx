@@ -43,9 +43,13 @@ export default function App() {
           
           {/* Logo & Branding Title */}
           <div className="flex items-center gap-3">
-            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#064E3B] to-[#03291F] border-2 border-amber-400/40 flex items-center justify-center text-amber-300 shadow-md relative overflow-hidden group">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-amber-400/15 via-transparent to-transparent"></div>
-              <BookOpen className="w-5.5 h-5.5 text-amber-400" />
+            <div className="w-11 h-11 rounded-xl border-2 border-amber-400/50 shadow-md overflow-hidden shrink-0">
+              <img 
+                src="/logo.jpg" 
+                alt="Logo Majmu'atul Khutob" 
+                className="w-full h-full object-cover" 
+                referrerPolicy="no-referrer" 
+              />
             </div>
             <div>
               <div className="flex items-center gap-2">
