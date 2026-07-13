@@ -6,7 +6,7 @@ import './index.css';
 // Register service worker for robust PWA installation and offline capabilities
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
+    navigator.serviceWorker.register('/sw.js?v=3')
       .then((reg) => console.log('Service Worker registered', reg))
       .catch((err) => console.error('Service Worker registration failed', err));
   });

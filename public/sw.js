@@ -1,4 +1,4 @@
-const CACHE_NAME = 'majmuatul-khutob-v1';
+const CACHE_NAME = 'majmuatul-khutob-v3';
 const ASSETS = [
   '/',
   '/index.html',
@@ -30,9 +30,23 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
+  // Only handle GET requests and local assets (exclude API calls)
+  if (event.request.method !== 'GET' || event.request.url.includes('/api/')) {
+    return;
+  }
+
   event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      return cachedResponse || fetch(event.request).catch(() => {});
+    caches.open(CACHE_NAME).then((cache) => {
+      return fetch(event.request)
+        .then((networkResponse) => {
+          if (networkResponse.status === 200) {
+            cache.put(event.request, networkResponse.clone());
+          }
+          return networkResponse;
+        })
+        .catch(() => {
+          return cache.match(event.request);
+        });
     })
   );
 });
