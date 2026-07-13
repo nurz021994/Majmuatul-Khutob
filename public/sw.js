@@ -1,13 +1,14 @@
-const CACHE_NAME = 'majmuatul-khutob-v3';
+const CACHE_NAME = 'majmuatul-khutob-v4';
 const ASSETS = [
   '/',
   '/index.html',
-  '/manifest.json',
+  '/manifest.json?v=4',
   '/logo-192.png',
   '/logo-512.png'
 ];
 
 self.addEventListener('install', (event) => {
+  self.skipWaiting(); // Force active immediately
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       return cache.addAll(ASSETS).catch(() => {});
@@ -17,15 +18,18 @@ self.addEventListener('install', (event) => {
 
 self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then((keys) => {
-      return Promise.all(
-        keys.map((key) => {
-          if (key !== CACHE_NAME) {
-            return caches.delete(key);
-          }
-        })
-      );
-    })
+    Promise.all([
+      self.clients.claim(), // Claim all clients immediately
+      caches.keys().then((keys) => {
+        return Promise.all(
+          keys.map((key) => {
+            if (key !== CACHE_NAME) {
+              return caches.delete(key);
+            }
+          })
+        );
+      })
+    ])
   );
 });
 

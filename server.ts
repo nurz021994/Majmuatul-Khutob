@@ -96,8 +96,20 @@ Sajikan teks Arab di dalam tag html khusus agar mudah dibaca dan didesain secara
 
 // Configure Vite or serve static assets
 async function startServer() {
+  // Add no-cache headers for service worker, manifest, and logos to prevent local browser caching issues
+  const serveStaticOptions = {
+    setHeaders: (res: any, filePath: string) => {
+      const fileName = path.basename(filePath);
+      if (fileName === "sw.js" || fileName === "manifest.json") {
+        res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0");
+      } else if (fileName.includes("logo") || filePath.endsWith(".png") || filePath.endsWith(".jpg") || filePath.endsWith(".jpeg")) {
+        res.setHeader("Cache-Control", "public, no-cache, must-revalidate, max-age=0");
+      }
+    }
+  };
+
   // Serve public folder directly (for logo.jpg, manifest.json, etc.)
-  app.use(express.static("public"));
+  app.use(express.static("public", serveStaticOptions));
 
   if (process.env.NODE_ENV !== "production") {
     console.log("Starting server in DEVELOPMENT mode with Vite Middleware...");
@@ -109,7 +121,7 @@ async function startServer() {
   } else {
     console.log("Starting server in PRODUCTION mode...");
     const distPath = path.join(process.cwd(), "dist");
-    app.use(express.static(distPath));
+    app.use(express.static(distPath, serveStaticOptions));
     app.get("*", (req, res) => {
       res.sendFile(path.join(distPath, "index.html"));
     });
